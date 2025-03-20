@@ -17,6 +17,14 @@ module.exports = {
   output: {
     clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),
