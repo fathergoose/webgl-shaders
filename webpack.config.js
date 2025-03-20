@@ -5,9 +5,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: "Webpack Example App",
-      header: "Webpack Example Title",
-      metaDesc: "Webpack Example Description",
+      title: "WebGL Shaders",
+      header: "Fun with shaders",
+      metaDesc: "A fun demo of webgl shaders",
       template: "src/index.html",
       filename: "index.html",
       inject: "body",
