@@ -44,3 +44,37 @@ gl.useProgram(program);
 if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
   console.error(gl.getProgramInfoLog(program));
 }
+
+const points = [
+  // first triangle
+  // top left
+  -1, -1,
+
+  // top right
+  1, -1,
+
+  // bottom left
+  -1, 1,
+
+  // second triangle
+  // bottom right
+  1, 1,
+
+  // top right
+  1, -1,
+
+  // bottom left
+  -1, 1,
+];
+
+const pointsBuffer = gl.createBuffer();
+
+gl.bindBuffer(gl.ARRAY_BUFFER, pointsBuffer);
+
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(points), gl.STATIC_DRAW);
+
+const pointsLocation = gl.getAttribLocation(program, "points");
+
+gl.vertexAttribPointer(pointsLocation, 2, gl.FLOAT, false, 0, 0);
+
+gl.enableVertexAttribArray(pointsLocation);
